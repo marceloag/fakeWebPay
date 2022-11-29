@@ -1,0 +1,85 @@
+<html>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <head>
+    <title>Soy Webpay, creeme</title>
+    <link rel="stylesheet" href="min.css" />
+  </head>
+  <body class="bg-slate-400 flex flex-row justify-center items-center gap-2">
+    <button
+      id="exito"
+      class="
+        px-3
+        py-4
+        flex flex-row
+        gap-2
+        rounded-3xl
+        drop-shadow-md
+        bg-green-700
+        text-white
+      "
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-checks"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <path d="M7 12l5 5l10 -10"></path>
+        <path d="M2 12l5 5m5 -5l5 -5"></path>
+      </svg>
+
+      Enviar mensaje de exito
+    </button>
+    <button
+      id="fail"
+      class="
+        px-3
+        py-4
+        flex flex-row
+        gap-2
+        rounded-3xl
+        drop-shadow-md
+        bg-red-700
+        text-white
+      "
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="icon icon-tabler icon-tabler-square-x"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        stroke-width="2"
+        stroke="currentColor"
+        fill="none"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      >
+        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+        <rect x="4" y="4" width="16" height="16" rx="2"></rect>
+        <path d="M10 10l4 4m0 -4l-4 4"></path>
+      </svg>
+      Enviar mensaje de fail
+    </button>
+    <script>
+      const queryString = window.location.search;
+      console.log(queryString);
+
+      document.getElementById('exito').addEventListener('click', function () {
+        console.log('exito');
+        window.ReactNativeWebView.postMessage('exito');
+      });
+      document.getElementById('fail').addEventListener('click', function () {
+        console.log('fail');
+        window.ReactNativeWebView.postMessage('fail');
+      });
+    </script>
+  </body>
+</html>
